@@ -1,0 +1,444 @@
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, transform 0.1s ease, color 0.15s ease;
+  user-select: none;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.985);
+}
+
+.btn--lg {
+  height: 56px;
+  padding: 0 20px;
+  font-size: 18px;
+}
+
+.btn--md {
+  height: 48px;
+  padding: 0 16px;
+  font-size: 16px;
+}
+
+.btn--sm {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 14px;
+  border-radius: var(--radius-pill);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn--primary {
+  background: var(--black);
+  color: var(--white);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--gray-700);
+}
+
+.btn--secondary {
+  background: var(--gray-100);
+  color: var(--black);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--gray-200);
+}
+
+.btn--danger {
+  background: var(--red-50);
+  color: var(--red);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--black);
+}
+
+.btn:disabled {
+  background: var(--gray-100);
+  color: var(--gray-400);
+  cursor: not-allowed;
+}
+
+/* ---------- Botão circular ---------- */
+.icon-btn {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--black);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.icon-btn:active {
+  transform: scale(0.94);
+}
+
+.icon-btn--float {
+  box-shadow: var(--shadow-float);
+}
+
+.icon-btn--gray {
+  background: var(--gray-100);
+}
+
+.icon-btn--gray:hover {
+  background: var(--gray-200);
+}
+
+.icon-btn--plain {
+  background: transparent;
+}
+
+.icon-btn--plain:hover {
+  background: var(--gray-50);
+}
+
+.icon-btn--dark {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* ---------- Chips / pílulas ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  background: var(--gray-100);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.chip:hover {
+  background: var(--gray-200);
+}
+
+.chip--active,
+.chip--active:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.chip--small {
+  height: 32px;
+  padding: 0 12px;
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-xs);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.badge--blue {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.badge--green {
+  background: var(--green);
+  color: var(--white);
+}
+
+.badge--gray {
+  background: var(--gray-100);
+  color: var(--black);
+}
+
+.badge--black {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* ---------- Itens de lista ---------- */
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 64px;
+  padding: 0 var(--gutter);
+  text-align: left;
+  background: transparent;
+  transition: background-color 0.15s ease;
+}
+
+button.list-item:hover {
+  background: var(--gray-50);
+}
+
+button.list-item:active {
+  background: var(--gray-100);
+}
+
+.list-item__leading {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 40px;
+}
+
+.list-item__icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gray-100);
+  color: var(--black);
+}
+
+.list-item__icon--plain {
+  background: transparent;
+}
+
+.list-item__icon--square {
+  border-radius: var(--radius-sm);
+}
+
+.list-item__meta {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+.list-item__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: stretch;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.list-item--last .list-item__body,
+.list-item--no-divider .list-item__body {
+  border-bottom-color: transparent;
+}
+
+.list-item__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.list-item__title {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list-item__subtitle {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list-item__trailing {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* ---------- Cabeçalho de seção ---------- */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px var(--gutter) 12px;
+}
+
+.section-header__action {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 10px;
+  margin-right: 0;
+  border-radius: var(--radius-pill);
+  background: var(--gray-100);
+}
+
+.section-header__action:hover {
+  background: var(--gray-200);
+}
+
+/* ---------- Trajeto (origem → destino) ---------- */
+.route-stops {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: 12px;
+}
+
+.route-stops__rail {
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.route-stops__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--black);
+  flex: none;
+}
+
+.route-stops__line {
+  flex: 1;
+  width: 2px;
+  min-height: 20px;
+  margin: 4px 0;
+  background: var(--gray-300);
+}
+
+.route-stops__square {
+  width: 8px;
+  height: 8px;
+  background: var(--black);
+  flex: none;
+}
+
+.route-stops__stop {
+  min-width: 0;
+  padding: 2px 0;
+}
+
+.route-stops__stop + .route-stops__stop {
+  padding-top: 14px;
+}
+
+.route-stops__title {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.route-stops__subtitle {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- Ícone de pagamento ---------- */
+.pay-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 28px;
+  border-radius: var(--radius-xs);
+  background: var(--gray-100);
+  color: var(--black);
+}
+
+.pay-icon--pix {
+  color: #32bcad;
+}
+
+.pay-icon--card {
+  background: var(--black);
+  color: var(--white);
+}
+
+.pay-icon--cash {
+  color: var(--green);
+}
+
+/* ---------- Toggle ---------- */
+.toggle {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  flex: none;
+  border-radius: var(--radius-pill);
+  background: var(--gray-300);
+  transition: background-color 0.2s ease;
+}
+
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s var(--ease);
+}
+
+.toggle[aria-checked='true'] {
+  background: var(--black);
+}
+
+.toggle[aria-checked='true']::after {
+  transform: translateX(20px);
+}
+
+/* ---------- Opção selecionável (radio) ---------- */
+.radio {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border-radius: 50%;
+  border: 2px solid var(--gray-300);
+  display: grid;
+  place-items: center;
+}
+
+.radio--on {
+  border: 7px solid var(--black);
+}

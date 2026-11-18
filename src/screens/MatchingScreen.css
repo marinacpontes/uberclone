@@ -1,0 +1,90 @@
+.matching__head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px var(--gutter) 16px;
+}
+
+.matching__found {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: page-in 0.3s var(--ease);
+}
+
+.progress {
+  position: relative;
+  height: 4px;
+  margin-top: 14px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--gray-100);
+}
+
+.progress span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 35%;
+  background: var(--black);
+  animation: indeterminate 1.3s var(--ease) infinite;
+}
+
+.progress--done span {
+  width: 100%;
+  animation: none;
+}
+
+@keyframes indeterminate {
+  from {
+    left: -35%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.matching__vehicle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px var(--gutter) 16px;
+}
+
+.matching__vehicle-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.matching__vehicle-info strong {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.matching__vehicle-info span {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.matching__price {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.matching__section {
+  padding: 16px var(--gutter);
+}
+
+.matching__payment {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.matching__actions {
+  padding: 8px var(--gutter) calc(16px + var(--safe-bottom));
+}

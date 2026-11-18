@@ -1,0 +1,92 @@
+.call {
+  position: absolute;
+  inset: 0;
+  z-index: 960;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--safe-top) + 64px) 32px calc(48px + var(--safe-bottom));
+  background: #141414;
+  color: var(--white);
+  animation: fade-in 0.25s ease;
+}
+
+.call__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.call__glyph {
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background: #2b2b2b;
+}
+
+.call__name {
+  margin: 16px 0 0;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.call__state {
+  margin: 0;
+  font-size: 17px;
+  color: #bdbdbd;
+  font-variant-numeric: tabular-nums;
+}
+
+.call__note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 20px 0 0;
+  font-size: 13px;
+  color: #9e9e9e;
+}
+
+.call__controls {
+  display: flex;
+  gap: 40px;
+}
+
+.call__ctl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--white);
+}
+
+.call__ctl span {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #2f2f2f;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.call__ctl--on span {
+  background: var(--white);
+  color: var(--black);
+}
+
+.call__end {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+}

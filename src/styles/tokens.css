@@ -1,0 +1,44 @@
+/* Design tokens — paleta monocromática, tipografia e medidas no padrão do app */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --gray-50: #f6f6f6;
+  --gray-100: #eeeeee;
+  --gray-200: #e2e2e2;
+  --gray-300: #cbcbcb;
+  --gray-400: #afafaf;
+  --gray-500: #757575;
+  --gray-600: #545454;
+  --gray-700: #333333;
+  --gray-800: #1f1f1f;
+
+  --blue: #276ef1;
+  --blue-50: #eff3fe;
+  --green: #05944f;
+  --green-50: #e6f2ed;
+  --red: #e11900;
+  --red-50: #ffefed;
+
+  --text-primary: #000000;
+  --text-secondary: #545454;
+  --text-tertiary: #757575;
+  --border: #e2e2e2;
+
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  --shadow-float: 0 2px 8px rgba(0, 0, 0, 0.16);
+  --shadow-sheet: 0 -2px 16px rgba(0, 0, 0, 0.08);
+  --shadow-pop: 0 4px 16px rgba(0, 0, 0, 0.14);
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --gutter: 16px;
+  --nav-h: 62px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}

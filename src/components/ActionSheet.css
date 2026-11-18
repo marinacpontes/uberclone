@@ -1,0 +1,58 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  align-items: flex-end;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fade-in 0.2s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.action-sheet {
+  width: 100%;
+  max-height: calc(100% - var(--safe-top) - 24px);
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  animation: slide-up 0.3s var(--ease);
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+.action-sheet__handle {
+  width: 36px;
+  height: 4px;
+  margin: 9px auto 0;
+  border-radius: 2px;
+  background: var(--gray-300);
+}
+
+.action-sheet__header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px var(--gutter) 8px;
+}
+
+.action-sheet__body {
+  min-height: 0;
+  padding-bottom: 8px;
+}
+
+.action-sheet__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px var(--gutter) calc(16px + var(--safe-bottom));
+}

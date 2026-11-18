@@ -1,0 +1,126 @@
+.rating__top {
+  flex: none;
+  padding: calc(var(--safe-top) + 6px) 8px 0;
+}
+
+.rating__body {
+  padding: 0 var(--gutter) 24px;
+}
+
+.rating__eyebrow {
+  margin: 4px 0 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--green);
+}
+
+.rating__title {
+  max-width: 300px;
+}
+
+.rating__driver {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0 16px;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.stars__star {
+  color: var(--gray-200);
+  transition: color 0.15s ease, transform 0.15s var(--ease);
+}
+
+.stars__star:hover {
+  transform: scale(1.08);
+}
+
+.stars__star--on {
+  color: var(--black);
+}
+
+.rating__label {
+  margin: 8px 0 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.rating__section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 28px;
+  animation: page-in 0.25s var(--ease);
+}
+
+.rating__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.rating__tips {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tip {
+  height: 48px;
+  padding: 0 4px;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  background: var(--gray-100);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.tip:hover {
+  background: var(--gray-200);
+}
+
+.tip--on,
+.tip--on:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.rating__receipt {
+  gap: 14px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--gray-50);
+}
+
+.rating__total {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.rating__total span {
+  flex: 1;
+}
+
+.rating__total strong {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.rating__footer {
+  flex: none;
+  padding: 12px var(--gutter) calc(16px + var(--safe-bottom));
+  border-top: 1px solid var(--gray-100);
+}

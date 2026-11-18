@@ -1,0 +1,262 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--text-primary);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+/* ---------- Stage (área externa) e aparelho ---------- */
+.stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 72px;
+  background: var(--white);
+}
+
+.device {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--white);
+  isolation: isolate;
+}
+
+.statusbar,
+.device__island,
+.device__home-indicator,
+.stage__aside {
+  display: none;
+}
+
+@media (min-width: 600px) and (min-height: 700px) {
+  .stage {
+    background: #f3f3f3;
+  }
+
+  .device {
+    flex: none;
+    width: 390px;
+    height: min(844px, calc(100dvh - 56px));
+    border-radius: 52px;
+    box-shadow:
+      0 0 0 10px #0d0d0d,
+      0 0 0 11px #3b3b3b,
+      0 24px 64px rgba(0, 0, 0, 0.18);
+    --safe-top: 50px;
+    --safe-bottom: 20px;
+  }
+
+  .statusbar {
+    display: flex;
+  }
+
+  .device__island {
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    width: 122px;
+    height: 35px;
+    margin-left: -61px;
+    border-radius: 20px;
+    background: #000;
+    z-index: 1001;
+    pointer-events: none;
+  }
+
+  .device__home-indicator {
+    display: block;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 134px;
+    height: 5px;
+    margin-left: -67px;
+    border-radius: 3px;
+    background: #000;
+    z-index: 1001;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 1100px) and (min-height: 700px) {
+  .stage__aside {
+    display: flex;
+  }
+}
+
+/* ---------- Telas ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen--map {
+  pointer-events: none;
+}
+
+.screen--map > * {
+  pointer-events: auto;
+}
+
+.screen--page {
+  background: var(--white);
+  animation: page-in 0.24s var(--ease);
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------- Tipografia ---------- */
+.t-display {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.t-h1 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.t-h2 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.t-h3 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.t-label {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.t-body {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.t-small {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.t-secondary {
+  color: var(--text-secondary);
+}
+
+.t-tertiary {
+  color: var(--text-tertiary);
+}
+
+.divider {
+  height: 1px;
+  background: var(--gray-100);
+  border: 0;
+  margin: 0;
+}
+
+.divider--thick {
+  height: 8px;
+  background: var(--gray-50);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--gray-100) 0%, var(--gray-50) 50%, var(--gray-100) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+  border-radius: var(--radius-xs);
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
